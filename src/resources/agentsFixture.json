@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "firstName": "Raoul",
+    "lastName": "Volfoni",
+    "photo": "",
+    "email": "raoul.volfoni@tontons-flingueurs.com",
+    "phone": "+33645454545"
+  },
+  {
+    "id": "5",
+    "firstName": "Maître",
+    "lastName": "Folace",
+    "photo": "",
+    "email": "folace@tontons-flingueurs.com",
+    "phone": "+33645454546"
+  },
+  {
+    "id": "2",
+    "firstName": "Antoine",
+    "lastName": "Delafoy",
+    "photo": "",
+    "email": "ad@tontons-flingueurs.com",
+    "phone": "+33645454500"
+  },
+  {
+    "id": "3",
+    "firstName": "Fernand",
+    "lastName": "Naudin",
+    "photo": "",
+    "email": "fernand@tontons-flingueurs.com",
+    "phone": "+33645454501"
+  },
+  {
+    "id": "4",
+    "firstName": "Patricia",
+    "lastName": "Mexicain",
+    "photo": "",
+    "email": "patty@tontons-flingueurs.com",
+    "phone": "+33645454502"
+  }
+]
