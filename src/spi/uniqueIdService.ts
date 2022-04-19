@@ -1,6 +1,6 @@
-import { IUniqueIdService } from 'src/domain/interfaces/IUniqueIdService';
+import { IGenerateUniqueId } from 'src/domain/interfaces/IGenerateUniqueId';
 import { v4 as generate } from 'uuid';
-export class UniqueIdService implements IUniqueIdService {
+export class UniqueIdService implements IGenerateUniqueId {
   generate(): string {
     return generate();
   }
