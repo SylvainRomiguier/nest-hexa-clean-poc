@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { Agent } from '../Agent';
+import { Agent, Id } from '../Agent';
 import { IAgentPresenter } from '../interfaces/IAgentPresenter';
 import { IAgentProvider } from '../interfaces/IAgentProvider';
 
@@ -18,7 +18,15 @@ export class UpdateAgent {
     photoUrl: string,
     presenter: IAgentPresenter,
   ) {
+    const foundAgent = await this._agentProvider.getAgentById(new Id(id));
     const agent = new Agent(id, firstName, lastName, photoUrl, phone, email);
+    switch(foundAgent.get().status) {
+      case "Activated":
+        agent.activate();
+        break;
+      case "Deactivated":
+        agent.deactivate();
+    }
     this._agentProvider.updateAgent(agent);
     presenter.present(agent);
   }

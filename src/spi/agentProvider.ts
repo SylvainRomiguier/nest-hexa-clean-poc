@@ -25,7 +25,7 @@ export class AgentProvider implements IAgentProvider {
                 sampleAgent.lastName,
                 sampleAgent.photo,
                 sampleAgent.phone,
-                sampleAgent.email,
+                sampleAgent.email
               ),
             ),
           );

@@ -5,13 +5,14 @@ export class Agent {
   private readonly _photoUrl: ImageUrl;
   private readonly _phone: Phone;
   private readonly _email: Email;
+  private _status:Status;
   constructor(
     id: string,
     firstName: string,
     lastName: string,
     photoUrl: string | undefined,
     phone: string,
-    email: string,
+    email: string
   ) {
     this._id = new Id(id);
     this._firstName = new Name(firstName);
@@ -19,6 +20,15 @@ export class Agent {
     this._photoUrl = new ImageUrl(photoUrl);
     this._phone = new Phone(phone);
     this._email = new Email(email);
+    this._status = Status.From("Activated");
+  }
+
+  activate() {
+    this._status = Status.From("Activated");
+  }
+
+  deactivate() {
+    this._status = Status.From("Deactivated");
   }
 
   get() {
@@ -29,6 +39,7 @@ export class Agent {
       photoUrl: this._photoUrl.get(),
       phone: this._phone.get(),
       email: this._email.get(),
+      status: this._status.get()
     };
   }
 }
@@ -104,5 +115,32 @@ export class Email {
   }
   get() {
     return this._value;
+  }
+}
+
+
+
+export abstract class Status {
+  get () {
+    return "Status";
+  }
+  public static From(status:string):Status {
+    switch(status) {
+      case "Activated": return new Activated();
+      case "Deactivated": return new Deactivated();
+      default: throw new Error(`Invalid status value ${status}, waiting for Activated or Deactivated.`)
+    }
+  }
+}
+
+export class Activated extends Status {
+  override get () {
+    return "Activated"
+  }
+}
+
+export class Deactivated extends Status {
+  override get () {
+    return "Deactivated"
   }
 }

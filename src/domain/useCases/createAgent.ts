@@ -26,7 +26,7 @@ export class CreateAgent {
       lastName,
       photoUrl,
       phone,
-      email,
+      email
     );
     this.agentProvider.createAgent(agent);
     presenter.present(agent);

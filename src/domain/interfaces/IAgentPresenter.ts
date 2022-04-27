@@ -8,6 +8,7 @@ export interface PresentedAgent {
   phone: string;
   email: string;
   photoUrl: string;
+  status:string;
 }
 
 export interface IAgentPresenter {

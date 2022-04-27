@@ -17,6 +17,7 @@ export class AgentPresenter implements IAgentPresenter {
       photoUrl: agent.get().photoUrl,
       firstName: agent.get().firstName,
       lastName: agent.get().lastName,
+      status: agent.get().status
     };
   }
   get(): PresentedAgent {
