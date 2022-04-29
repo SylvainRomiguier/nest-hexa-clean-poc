@@ -38,7 +38,7 @@ export class AgentProvider implements IAgentProvider {
     return Promise.resolve(this._agents.find((a) => a.get().id === id.get()));
   }
   getAgents(): Promise<Agent[]> {
-    return Promise.resolve(this._agents);
+    return Promise.resolve(this._agents.sort((a,b) => a.get().id.localeCompare(b.get().id)));
   }
   createAgent(agent: Agent): void {
     this._agents.push(agent);

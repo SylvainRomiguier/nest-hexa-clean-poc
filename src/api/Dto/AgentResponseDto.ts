@@ -9,7 +9,8 @@ export class AgentResponseDto {
     email: string;
     photoUrl: string;
     status:string;
-    activationEndpoint: string;
+    activationUrl: string;
+    detailsUrl: string;
     constructor(agent: PresentedAgent, host: string) {
         this.id = agent.id;
         this.name = agent.name;
@@ -21,11 +22,12 @@ export class AgentResponseDto {
         this.status = agent.status;
         switch(agent.status) {
             case "Activated":
-                this.activationEndpoint = `${host}/${agent.id}/deactivate`;
+                this.activationUrl = `${host}/agents/${agent.id}/deactivate`;
                 break;
             case "Deactivated":
-                this.activationEndpoint =  `${host}/${agent.id}/activate`;
+                this.activationUrl =  `${host}/agents/${agent.id}/activate`;
                 break;
-        }
+        };
+        this.detailsUrl = `${host}/agents/${agent.id}`;
     }
 }

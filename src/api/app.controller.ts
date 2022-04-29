@@ -116,7 +116,7 @@ export class AppController {
     }
   }
 
-  @Post('/:id/activate')
+  @Put('/:id/activate')
   async activateAgentById(
     @Req() request: Request,
     @Param('id') id: string,
@@ -136,7 +136,7 @@ export class AppController {
     }
   }
 
-  @Post('/:id/deactivate')
+  @Put('/:id/deactivate')
   async deactivateAgentById(
     @Req() request: Request,
     @Param('id') id: string,
